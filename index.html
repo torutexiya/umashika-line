@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うましかやろう 友だち追加</title>
+
+<!-- OGP: X(Twitter)でリンクを画像カード表示にするための設定 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="うましか公式LINE">
+<meta property="og:description" content="友達追加はこちらで！">
+<meta property="og:image" content="https://torutexiya.github.io/umashika-line/og-image.png">
+<meta property="og:url" content="https://torutexiya.github.io/umashika-line/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="うましか公式LINE">
+<meta name="twitter:description" content="友達追加はこちらで！">
+<meta name="twitter:image" content="https://torutexiya.github.io/umashika-line/og-image.png">
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    background: linear-gradient(160deg, #06C755, #049A43);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px 24px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: #111;
+  }
+  .line-icon {
+    width: 90px;
+    height: 70px;
+    background: #06C755;
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    position: relative;
+  }
+  .line-icon::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 16px solid #06C755;
+  }
+  p.sub {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 24px;
+  }
+  a.btn {
+    display: block;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  a.primary {
+    background: #06C755;
+    color: #fff;
+  }
+  a.secondary {
+    background: #f0f0f0;
+    color: #111;
+  }
+  .note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  .x-warning {
+    background: #FFF7E6;
+    border: 2px solid #FFC72C;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .x-warning .title {
+    font-weight: 800;
+    font-size: 15px;
+    color: #7a5b00;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .step:last-child { margin-bottom: 0; }
+  .step .num {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFC72C;
+    color: #4a3600;
+    font-weight: 800;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step .txt {
+    font-size: 14px;
+    color: #4a3600;
+    line-height: 1.5;
+    padding-top: 2px;
+  }
+  .step .txt b {
+    background: #fff;
+    padding: 1px 6px;
+    border-radius: 6px;
+    border: 1px solid #FFC72C;
+  }
+  .info {
+    text-align: left;
+    background: #F5FFF9;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 20px 0;
+  }
+  .info h2 {
+    font-size: 15px;
+    margin: 0 0 10px;
+    color: #06C755;
+  }
+  .info p {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.8;
+    margin: 0 0 6px;
+  }
+  .info p:last-child { margin-bottom: 0; }
+  .divider {
+    border: none;
+    border-top: 1px dashed #ddd;
+    margin: 20px 0;
+  }
+  .last-resort {
+    font-size: 13px;
+    color: #555;
+    background: #F5F5F5;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 14px;
+    line-height: 1.7;
+    text-align: left;
+  }
+  .last-resort b {
+    color: #06C755;
+    background: #fff;
+    padding: 1px 6px;
+    border-radius: 6px;
+    border: 1px solid #06C755;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="line-icon">LINE</div>
+    <h1>うましかやろう 公式LINE</h1>
+    <p class="sub">下のボタンをタップして友だち追加してください</p>
+
+    <a class="btn primary" href="line://ti/p/@333fecaz">
+      LINEアプリで友だち追加
+    </a>
+
+    <a class="btn secondary" href="https://line.me/R/ti/p/@333fecaz">
+      うまく開かない場合はこちら
+    </a>
+
+    <div class="last-resort">
+      それでも開かない場合は、LINEアプリを開いて<br>
+      検索窓に <b>@333fecaz</b> と入力し、ID検索で追加してください。
+    </div>
+
+    <div class="x-warning" style="margin-top: 14px;">
+      <div class="title">⚠️ 上のボタンでも開かない場合</div>
+      <div class="step">
+        <div class="num">1</div>
+        <div class="txt">そのボタンが開けない場合は、下の手順でブラウザを切り替えてください</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="txt">画面右上の <b>… （点3つ）</b> をタップ</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div class="txt"><b>「デフォルトのブラウザで開く」</b>を選び、開き直した画面でもう一度ボタンをタップ</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="info">
+      <h2>🔥 電子スタンプカード、配信します</h2>
+      <p>うましかスタンプカードが"電子スタンプカード"として配信されます。</p>
+      <h2>📡 近日の公演・ワークショップ情報</h2>
+      <p>公演情報やワークショップ情報をLINEで配信していきます。</p>
+      <h2>友だち追加、待っております！</h2>
+    </div>
+
+    <p class="note">
+      ボタンが反応しない場合は、右上の「…」メニューから<br>
+      「デフォルトのブラウザで開く」を選んでもう一度お試しください。
+    </p>
+  </div>
+</body>
+</html>
